@@ -150,7 +150,7 @@ form{
 
 #render{
     padding-top: 50px;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 table{
     border: 1px ,solid, #4b0953;
@@ -167,7 +167,7 @@ th{
   
   background-color: #4b06a7;
   background-position: center;
-    border: 3px solid #4b0953;
+    border: 3px solid #410747;
     color: white;
     font-size: 25px;
 }
