@@ -21,7 +21,7 @@ function Food(fName,fType,fPrice){
 let render=document.getElementById('render');
 
 let tableRender=document.createElement('table')
-tableRender.style.border="2px solid black"
+tableRender.style.border="3px solid #4b0953"
 render.appendChild(tableRender)
 
 let title=document.createElement('caption');
@@ -29,7 +29,7 @@ title.textContent="Food Table"
 title.style.marginBottom="20px"
 title.style.fontSize="40px"
 title.style.fontWeight="bold"
-title.style.color="black"
+title.style.color="#4b0953"
 tableRender.appendChild(title)
 
 let tHead=document.createElement('thead')
@@ -73,7 +73,7 @@ td3.textContent=this.foodType
 tr.appendChild(td3)
 
 let td4 = document.createElement('td');
-td4.textContent= `${this.foodPrice} $`
+td4.textContent= `${this.foodPrice} JD`
 tr.appendChild(td4)
 
 
