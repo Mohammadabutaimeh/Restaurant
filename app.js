@@ -7,78 +7,18 @@ let idFunction= function idFunction(min, max) {
 }
 
 let intialFoodID= idFunction(1000, 1000);
-
+let foodArray=[];
 function Food(fName,fType,fPrice){
-    this.foodId=0;
+    this.foodId=idFunction(1000, 9999);
     this.foodName = fName;
     this.foodType = fType;
     this.foodPrice= fPrice;
-    this.generatId=function(){
-        this.foodId=intialFoodID ;
-        intialFoodID =this.foodId+1
-    }
-}
-let render=document.getElementById('render');
-
-let tableRender=document.createElement('table')
-tableRender.style.border="3px solid #4b0953"
-render.appendChild(tableRender)
-
-let title=document.createElement('caption');
-title.textContent="Food Table"
-title.style.marginBottom="20px"
-title.style.fontSize="40px"
-title.style.fontWeight="bold"
-title.style.color="#4b0953"
-tableRender.appendChild(title)
-
-let tHead=document.createElement('thead')
-tableRender.appendChild(tHead)
-
-let th1 = document.createElement('th');
-th1.textContent="ID";
-tHead.appendChild(th1)
-
-let th2 = document.createElement('th');
-th2.textContent="Name";
-tHead.appendChild(th2)
-
-let th3 = document.createElement('th');
-th3.textContent="Type";
-tHead.appendChild(th3)
-
-let th4 = document.createElement('th');
-th4.textContent="Price";
-tHead.appendChild(th4)
-
-Food.prototype.foodRender = function () {
-
-
-let tBody=document.createElement("tbody")
-tableRender.appendChild(tBody)
-
-let tr = document.createElement('tr');
-tBody.appendChild(tr)
-
-let td1 = document.createElement('td');
-td1.textContent=this.foodId
-tr.appendChild(td1)
-
-let td2 = document.createElement('td');
-td2.textContent=this.foodName;
-tr.appendChild(td2)
-
-let td3 = document.createElement('td');
-td3.textContent=this.foodType
-tr.appendChild(td3)
-
-let td4 = document.createElement('td');
-td4.textContent= `${this.foodPrice} JD`
-tr.appendChild(td4)
-
-
+    
+    foodArray.push(this);
 }
 
+let saveValues = document.getElementById('form');
+saveValues.addEventListener('submit', handler)
 
 function handler(e){
     e.preventDefault();
@@ -88,15 +28,40 @@ function handler(e){
    
 let food1 =new Food(foodName,foodType,foodPrice);
 
-
-food1.generatId();
-food1.foodRender();
+storeIntoLocalStorage();
 fName.value='';
 fPrice.value='';
 Types.value='';
 }
 
+readFromLocalStorage();
 
-let saveValues = document.getElementById('form');
-saveValues.addEventListener('submit', handler)
+console.log(foodArray);
+function storeIntoLocalStorage() {
+    let jsonObjArray = JSON.stringify(foodArray);
+    window.localStorage.setItem("food", jsonObjArray);
+}
+function readFromLocalStorage() {
+    let jsonArray = window.localStorage.getItem("food");
+   
+
+    let objArray = JSON.parse(jsonArray);
+
+    if (objArray == null) {
+        console.log("");
+    } else {
+      
+        for(let i = 0 ; i< objArray.length; i++){
+            let food1 = new Food(objArray[i].foodName , objArray[i].foodType , objArray[i].foodPrice );
+            food1=objArray[i].foodId
+   
+        }
+    
+
+    }
+
+
+}
+
+
 
