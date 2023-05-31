@@ -101,50 +101,6 @@ padding-bottom:20px;
 }
 
 
-
-label{
-    width: 100%;
-    display: flex;
-    margin: 4px;
-    font-size: 25px;
-    font-weight: bolder;
-    color: #4d1055;
-}
-input{
-    width: 100%;
-    display: inline-block;
-    margin: 4px;
-    height: 30px;
-    color: #3e0646;
-    font-weight: bolder;
-    font-size: 20px;
-    
-}
-#Types{
-    width: 100%;
-    display: inline-block;
-    margin: 4px;
-    height: 30px;
-    font-weight: bold; 
-    font-size:20px; 
-}
-#submit{
-    width: 100%;
-    margin-top: 10px;
-    height: 50px;
-    font-size: 25px;
-    font-weight: bold;
-}
-form{
-    border-radius: 10px;
-     background-image: url(./assets/Blue_to_purple_gradient_header.png);
-        color: black;
-        width: 1000px;
-        padding: 20px;
-        font-weight: bold;
-  
-        
-}
 .header2{
     text-align: center;
     font-size: 40px;
@@ -154,15 +110,14 @@ form{
 
 #render{
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 table{
     border: 1px ,solid, #4b0953;
     border-collapse: collapse;
-  width: 500%;
+  width: 1000px;
   height: 50px;
-  margin-top: 30px;
-  margin-bottom: 80px;
+ 
   font-size: 20px;
     
 }
@@ -171,7 +126,7 @@ th{
   
   background-color: #4b06a7;
   background-position: center;
-    border: 3px solid #410747;
+    border: 3px solid #4b0953;
     color: white;
     font-size: 25px;
 }
